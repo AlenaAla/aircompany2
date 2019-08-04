@@ -1,1 +1,2 @@
-# aircompany2
+# aircompany
+Project with "code smells" for refactoring
