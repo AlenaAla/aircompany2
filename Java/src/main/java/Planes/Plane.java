@@ -28,8 +28,7 @@ abstract public class Plane {
     }
 
     public int getMinLoadCapacity() {
-        int result = this.maxLoadCapacity;
-        return result;
+        return maxLoadCapacity;
     }
 
     @Override
@@ -47,10 +46,10 @@ abstract public class Plane {
         if (this == o) return true;
         if (!(o instanceof Plane)) return false;
         Plane plane = (Plane) o;
-        return maxSpeed == plane.maxSpeed &&
-                maxFlightDistance == plane.maxFlightDistance &&
-                maxLoadCapacity == plane.maxLoadCapacity &&
-                Objects.equals(model, plane.model);
+        boolean status = maxSpeed == plane.maxSpeed;
+        status = status && maxFlightDistance == plane.maxFlightDistance;
+        status = status && maxLoadCapacity == plane.maxLoadCapacity;
+        return status && Objects.equals(model, plane.model);
     }
 
     @Override
